@@ -50,7 +50,6 @@ class AppUtil {
          * @return Pair<Int, Point>
          * */
         fun getPolygonDetail(maxCoOrdinate : Pair<Int, Int>) : Pair<Int, Point> {
-            val seedSuffix = System.currentTimeMillis() %100
             val sides = Random(System.currentTimeMillis()%100).nextInt(15)
             val x = Random(maxCoOrdinate.first/2.toLong()).nextInt(maxCoOrdinate.first)
             val y = Random(maxCoOrdinate.second/2.toLong()).nextInt(maxCoOrdinate.second)
@@ -85,19 +84,15 @@ class AppUtil {
                     val pointA = polygonDetail.points[i]
                     val pointB = polygonDetail.points[i+1]
                     totalCalculatedArea += abs(0.5 * ((pointA.x*(pointB.y - pointC.y))+(pointB.x*(pointC.y - pointA.y))+(pointC.x*(pointA.y- pointB.y))))
-//                    modifiedPointsList.add(PointModel(Point(pointA.x,pointA.y),paint))
                 }
                 val pointA = polygonDetail.points[0]
                 val pointB = polygonDetail.points[polygonDetail.points.size-1]
                 totalCalculatedArea += abs(0.5 * ((pointA.x*(pointB.y - pointC.y))+(pointB.x*(pointC.y - pointA.y))+(pointC.x*(pointA.y- pointB.y))))
                 totalCalculatedArea = roundOff(totalCalculatedArea).toDouble()
-                Log.d("PolygonInsidePoints", "Added Area : $totalCalculatedArea")
-                Log.d("PolygonInsidePoints", "Total Area : $area")
 
                 //Compare area
                 if(area == totalCalculatedArea){
-                    Log.d("PolygonInsidePoints", "Point found")
-                    it.paint = paint
+                  it.paint = paint
                 }
                 modifiedPointsList.add(it)
             }

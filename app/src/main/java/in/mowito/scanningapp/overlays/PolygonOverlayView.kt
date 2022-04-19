@@ -66,7 +66,6 @@ class PolygonOverlayView constructor(context: Context?, attributeSet: AttributeS
         path.close()
         this.point = point
         invalidate()
-        Log.d("Polygon", "Sides : $sides")
         return PolygonDetailsModel(sides = sides, sideLength = sideLength, points = points)
     }
     /**
