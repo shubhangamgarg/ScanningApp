@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.camera.view.PreviewView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cameraPreview"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:elevation="1dp"/>
+    <in.mowito.scanningapp.overlays.PointsOverlayView
+        android:id="@+id/pointsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="2dp"/>
+    <in.mowito.scanningapp.overlays.PolygonOverlayView
+        android:id="@+id/polygonView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="3dp"/>
+
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_baseline_camera_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945"
+        android:clickable="true"
+        app:rippleColor="@color/black"
+        android:elevation="4dp"
+        android:id="@+id/captureImage"
+        android:focusable="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/generatePoint"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+
+        android:backgroundTint="@color/white"
+        android:drawableTop="@drawable/ic_baseline_drag_indicator_24"
+        android:elevation="4dp"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/captureImage"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/removePoint"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        android:backgroundTint="@color/white"
+        android:elevation="4dp"
+        android:drawableTop="@drawable/ic_baseline_remove_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/generatePoint"
+        app:cornerRadius="25dp"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/generatePolygon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:cornerRadius="25dp"
+        android:visibility="gone"
+        android:drawableTop="@drawable/ic_baseline_format_shapes_24"
+        android:backgroundTint="@color/white"
+        android:elevation="4dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/captureImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/rejectImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/white"
+        android:drawableTop="@drawable/ic_baseline_delete_24"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/generatePolygon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
